@@ -32,50 +32,47 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple[300],
         title: Text('Click the FAB'),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.favorite,
-              color: _counter % 2 == 0 ? Colors.white : Colors.red,
-            ),
-            onPressed: () {
-              _counter++;
-              _scaffoldKey.currentState
-                ..hideCurrentSnackBar()
-                ..showSnackBar(_counter % 2 == 0
-                    ? SnackBar(
-                        content: Text("Scaffold sin accion"),
-                      )
-                    :SnackBar(
-                        content: Text("Mostrar Fecha"),
-                        action: SnackBarAction(
-                          label: "Fecha",
-                          onPressed: () {
-                            _d = DateTime.now();
-                            showDialog(
-                                context: context,
-                                builder: (_) {
-                                  return AlertDialog(
-                                    title: Text("Dialogo"),
-                                    content: Text("$_d"),
-                                  );
-                                });
-                          },
-                        ),
-                      ));
-
-              setState(() {});
-            },
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-          ),
-        ],
       ),
       body: Center(
         child: Container(
           child: Text('$_counter clicks'),
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightBlue[200],
+        child: Icon(
+          Icons.favorite,
+          color: _counter % 2 == 0 ? Colors.white : Colors.red,
+        ),
+        onPressed: () {
+          _counter++;
+          _scaffoldKey.currentState
+            ..hideCurrentSnackBar()
+            ..showSnackBar(_counter % 2 == 0
+                ? SnackBar(
+                    content: Text("Scaffold sin accion"),
+                  )
+                : SnackBar(
+                    content: Text("Mostrar Fecha"),
+                    action: SnackBarAction(
+                      label: "Fecha",
+                      onPressed: () {
+                        _d = DateTime.now();
+                        showDialog(
+                            context: context,
+                            builder: (_) {
+                              return AlertDialog(
+                                title: Text("Dialogo"),
+                                content: Text("$_d"),
+                              );
+                            });
+                      },
+                    ),
+                  ));
+
+          setState(() {});
+        },
       ),
     );
   }
