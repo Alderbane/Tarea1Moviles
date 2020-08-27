@@ -1,6 +1,7 @@
 # Tarea1
 
-A new Flutter project.
+Guillermo Hernandez
+is713777
 
 ## Getting Started
 
