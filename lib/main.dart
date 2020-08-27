@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(
               Icons.favorite,
-              color: _counter % 2 == 0 ? Colors.red : Colors.white,
+              color: _counter % 2 == 0 ? Colors.white : Colors.red,
             ),
             onPressed: () {
               _counter++;
